@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'https://youtube-v31.p.rapidapi.com'
+const BASE_URL = BASE_URL_API
 
 const options = {
     params: {
@@ -8,12 +8,14 @@ const options = {
     },
     headers: {
         'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-        'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
+        'X-RapidAPI-Host': API_HOST
     }
 };
 
 export const fetchFromAPI = async (url) => {
-    const { data } = await axios.get(`${BASE_URL}/${url}` ,options)
-    
+    const {
+        data
+    } = await axios.get(`${BASE_URL}/${url}`, options)
+
     return data;
 }
